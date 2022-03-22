@@ -49,7 +49,6 @@ public class ProdutoRest {
 		if (produto.getQuantidadeEstoque() < 0) {
 			return new ResponseEntity<>(new ApiMessage("Campo quantidade invalido", 400), HttpStatus.BAD_REQUEST);
 		}
-
 		produtoRepository.save(produto);
 		return new ResponseEntity<>(new ApiMessage("Produto " + produto.getNome() + " criado", 201),
 				HttpStatus.CREATED);
